@@ -32,6 +32,10 @@ const sliders = (slides, dir, prev, next) => {
     try {
         const prevBtn = document.querySelector(prev),
             nextBtn = document.querySelector(next);
+        
+        if (prevBtn === null) {
+            return;
+        }
 
         prevBtn.addEventListener('click', () => {
             changeSlide(-1);

@@ -19,21 +19,24 @@ const mask = (selector) => {
         let matrix = '+7 (___) ___ __ __',
             i = 0,
             def = matrix.replace(/\D/g, ''),
-            value = this.value.replace(/\D/g, '');
+            val = this.value.replace(/\D/g, '');
 
-        if (def.length >= value.length) {
-            value = def;
+        if (def.length >= val.length) {
+            val = def;
         }
 
-        this.value = matrix.replace(/./g, (a) => {
-            return /[_\d]/.test(a) && i < value.length ? value.charAt(i++) : i >= value.length ? ' ' : a;
+        this.value = matrix.replace(/./g, function(a) {
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
         });
 
-        if (event.type === 'blur') {
+        console.log(' this.value',  this.value);
+        console.log('this.value.length', this.value.length)
+        if (event.type === 'onblur') {
             if (this.value.length === 2) {
                 this.value = ''
             }
         } else {
+            console.log('this.value.length', this.value.length);
             setCursorPosition(this.value.length, this)
         }
     }

@@ -1,4 +1,5 @@
 // import checkNumInputs from './checkNumInputs';
+import { postData } from '../services/requests';
 
 const forms = () => {
     const form = document.querySelectorAll('form'),
@@ -24,16 +25,6 @@ const forms = () => {
         questions: 'assets/questions.php'
     }
 
-    const postData = async (url, data) => {
-
-        let res = await fetch(url, {
-            method: 'POST',
-            body: data
-        });
-
-        return await res.text();
-    };
-
     const clearInputs = () => {
         inputs.forEach(item => {
             item.value = '';
@@ -44,9 +35,9 @@ const forms = () => {
         })
     };
 
+    console.log('hi');
     upload.forEach(item => {
         item.addEventListener('input', () => {
-            console.log(item.files[0])
             let dots;
 
             const arr = item.files[0].name.split('.');
