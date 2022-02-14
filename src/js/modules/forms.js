@@ -8,9 +8,6 @@ const forms = () => {
 
     // checkNumInputs('input[name="user_phone"]');
 
-
-
-
     const message = {
         loading: 'Загрузка',
         success: 'Спасибо, скоро мы с вами свзяжемся',
