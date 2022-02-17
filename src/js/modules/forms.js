@@ -32,7 +32,6 @@ const forms = () => {
         })
     };
 
-    console.log('hi');
     upload.forEach(item => {
         item.addEventListener('input', () => {
             let dots;
